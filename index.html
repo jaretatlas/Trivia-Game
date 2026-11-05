@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Trivia Game</h1>
+            <p id="turn">Team 1, choose a box!</p>
+            <p>Timer <span id="timer">1:00</span></p>
+        </header>
+
+        <section id="board" aria-label="Trivia categories"></section>
+
+        <section id="question-screen" aria-label="Current question" hidden>
+            <article id="question-card">
+                <h2 id="category"></h2>
+                <p id="question"></p>
+                <button id="show-answer" onclick="showAnswer()">Show Answer</button>
+                <p id="answer" hidden></p>
+            </article>
+            <div id="controls">
+                <button id="correct" onclick="scoreAnswer(1)">Correct</button>
+                <button id="incorrect" onclick="scoreAnswer(-1)">Incorrect</button>
+                <button id="pass" onclick="scoreAnswer(0)">Pass</button>
+            </div>
+        </section>
+
+        <footer>
+            <h2>Scoreboard</h2>
+            <div>Team 1<p id="score1">0</p></div>
+            <div>Team 2<p id="score2">0</p></div>
+        </footer>
+        <p id="message" role="status">Answer aloud, then choose Correct, Incorrect, or Pass.</p>
+        <button id="restart" onclick="location.reload()">Restart Game</button>
+    </main>
+</body>
+</html>
